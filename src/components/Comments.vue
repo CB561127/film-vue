@@ -6,7 +6,7 @@
 
     <div>
       <div style="margin: 20px 0;"></div>
-      <el-input
+      <el-input @change="transportToCon()"
         type="textarea"
         placeholder="请输入内容"
         v-model="textarea"
@@ -26,6 +26,19 @@ export default {
     return {
       text: '',
       textarea: ''
+    }
+  },
+  methods: {
+    textChange () {
+      console.log(this.textarea)
+    },
+
+    transportToCon () {
+      this.$axios.get('http://localhost:8888/comments/' + this.textarea).then(function (resp) {
+        if (resp.data === '成功') {
+          alert('评论成功')
+        }
+      })
     }
   }
 }

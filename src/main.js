@@ -6,6 +6,12 @@ import router from './router'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+
+import Axios from 'axios'
+import AV from 'leancloud-storage'
+Vue.use(AV)
+Vue.prototype.$axios = Axios
+
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
