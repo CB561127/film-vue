@@ -8,9 +8,11 @@ import classify from '../components/Classify'
 import rankList from '../components/RankList'
 import login from '../components/Login'
 import search from '../components/Search'
+import register from '../components/Register'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
    /* {
       path: '/',
@@ -21,6 +23,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component:login,
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component:register,
       meta: {
         requireAuth: true
       }
@@ -30,16 +37,13 @@ export default new Router({
       name:'search',
       component:search,
       meta: {
-        requireAuth: true
+        requireAuth: false
       }
     },
     {
-      path: '/',
+      path: '/index',
       name: 'firstPage',
       component: firstPage,
-      meta: {
-        requireAuth: true
-      }
     },
     {
       path: '/review',
@@ -69,9 +73,6 @@ export default new Router({
       path:'/message',
       name:'message',
       component:filmMessage,
-      meta: {
-        requireAuth: true
-      }
     }
   ]
 })

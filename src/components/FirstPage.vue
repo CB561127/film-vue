@@ -14,7 +14,7 @@
       <div class="ranking"><el-button type="info" size="small" @click="toList">榜单</el-button></div>
       <div class="classify"><el-button type="info" size="small" @click="toType">分类</el-button></div>
       <div class="review"><el-button type="info" size="small" @click="toReview">影评</el-button></div>
-      <span class="login" @click="toLogin"><el-button style="background-color: transparent">登录/注册
+      <span class="login" @click="checkUser"><el-button style="background-color: transparent">{{userSign}}
         <i class="el-icon-user"></i></el-button></span>
     </el-header>
   <!--  <el-header>正 在 热 映</el-header>
@@ -466,9 +466,12 @@
     name: 'firstPage',
     data(){
         return{
+          userSign:'登录/注册  ',
           defaultInfo:true,
+          resultInfo:false,
           searchInfo:false,
           searchString: null,
+          userName: null,
           resultStr:"抱歉，未搜索到任何结果",
           films: [],
           value:0,
@@ -559,6 +562,14 @@
       },
       toLogin(){
         this.$router.replace('/login')
+      },
+      checkUser(){
+        this.userName = this.$store.state.user.userName
+        if(this.userName != ''){
+          this.userSign = "欢迎！"+this.userName
+        }else{
+          this.userSign = '登录/注册'
+        }
       },
       search(){
         this.resultInfo = false
