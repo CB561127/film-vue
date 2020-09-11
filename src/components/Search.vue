@@ -25,8 +25,11 @@
       <div class="result" v-for="(item,index) in films":key="item.fid">
         <el-col style="height: 190px;">
              <div class="cover">
-               <img :src="item.poster" alt="封面">]
-                <div slot="content" >
+               <div class="I">
+                 <img :src="item.poster" alt="封面">
+               </div>
+<!--               <img :src="item.poster" alt="封面">-->
+               <div class="Y" slot="content" >
                   <span class="word">上映时间：{{item.time}}</span>
                   <br>
                   <span class="word">评分：{{item.score}}</span>
@@ -38,13 +41,21 @@
                   <span class="word">导演：{{item.director}}</span>
                   <br>
                   <span class="word">主演：{{item.cast}}</span>
-                </div></div>
+                </div>
+             </div>
         </el-col>
       </div>
     </div>
   </el-container>
 </template>
 <style>
+  .I{
+    width: 115px;
+    float: left;
+  }
+  .Y{
+    float: right; width: 400px;
+  }
   .img_index {
     width: auto;
     height: 400px;
@@ -92,12 +103,14 @@
     background-color: transparent;
   }
   .cover {
-    width: 500px;
+    width: 600px;
     height: 150px;
     margin-bottom: 7px;
+    padding-left: 200px;
     overflow: hidden;
     cursor: pointer;
-    vertical-align: middle;
+
+    /*vertical-align: middle;*/
     display: table-cell;
   }
   /* .cover {

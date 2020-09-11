@@ -2,10 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import firstPage from '../components/FirstPage'
-import filmMessage from '../components/FilmMessage'
-import review from '../components/Review'
+// import filmMessage from '../components/FilmMessage'
+// import review from '../components/Review'
 import classify from '../components/Classify'
-import rankList from '../components/RankList'
+// import rankList from '../components/RankList'
+import review from  "../components/Comments"
 import login from '../components/Login'
 import search from '../components/Search'
 import register from '../components/Register'
@@ -53,14 +54,14 @@ export default new Router({
         requireAuth: true
       }
     },
-    {
-      path: '/list',
-      name: 'list',
-      component:rankList,
-      meta: {
-        requireAuth: true
-      }
-    },
+    // {
+    //   path: '/list',
+    //   name: 'list',
+    //   component:rankList,
+    //   meta: {
+    //     requireAuth: true
+    //   }
+    // },
     {
       path: '/classify',
       name: 'classify',
@@ -69,10 +70,10 @@ export default new Router({
         requireAuth: true
       }
     },
-    {
-      path:'/message',
-      name:'message',
-      component:filmMessage,
-    }
+    // {
+    //   path:'/message',
+    //   name:'message',
+    //   component:filmMessage,
+    // }
   ]
 })
